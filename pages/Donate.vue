@@ -1,26 +1,21 @@
 <template>
-  <div>
-    <h1>Donate with Bitcoin</h1>
-    <p>
-      Thank you for considering a donation to support our work. You can use
-      Bitcoin to make a secure and anonymous donation to our organization.
-    </p>
-    <a href="bitcoin:{{ bitcoinAddress }}?amount={{ donationAmount }}">
-      Donate with Bitcoin
-    </a>
-  </div>
-</template>
-
-<script>
-export default {
-  data () {
-    return {
-      bitcoinAddress: '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2',
-      donationAmount: 0.01
+    <div>
+      <button @click="processDonation">Donate with Bitcoin</button>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    methods: {
+      processDonation() {
+        // Replace with your BitPay payment button code
+        const paymentButtonCode = '<!-- Your BitPay payment button code here -->';
+        const paymentWindow = window.open('', '_blank');
+        paymentWindow.document.write(paymentButtonCode);
+      }
     }
   }
-}
-</script>
-
+  </script>
+  
 <style>
 </style>
